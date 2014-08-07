@@ -1,101 +1,37 @@
 package com.github.populationstuff;
 
 public class Formulas {
-	public static void doCalculations(){ //This stores all of the Calculations and Formulas that I am using, these will become split up overtime
-		while(Variables.totalDays != Variables.days)
-		{
-			Variables.foodAmount = Variables.foodAmount + 100;
-			Variables.waterAmount = Variables.waterAmount + 100;
-			Variables.foodAmount = Variables.foodAmount - Variables.deerPopulation + 2;
-			if(Variables.offSpring > 0){
-				Variables.foodAmount = Variables.foodAmount - Variables.offSpring;
-			}
-			Variables.waterAmount = Variables.waterAmount - (Variables.deerPopulation/2);
-			Variables.waterAmount = Variables.waterAmount - Variables.deerPopulation * 2;
-			if(Variables.deerPopulation >= 2){
-				Variables.offSpring = Variables.offSpring + 5;
-			}
-			if(Variables.foodAmount <= 0){
-				if(Variables.deerPopulation >= 10){
-					Variables.deerPopulation = Variables.deerPopulation - 10;
-					Variables.foodAmount = Variables.foodAmount + 10;
-				}
-				if(Variables.deerPopulation < 10){
-					Variables.foodAmount = Variables.foodAmount + 10;
-					Variables.deerPopulation = Variables.deerPopulation - 2;
-				}
-				if(Variables.offSpring >= 2){
-					Variables.offSpring = Variables.offSpring - 2;
-					Variables.foodAmount = Variables.foodAmount + 5;
-				}
-				if(Variables.offSpring < 2){
-					Variables.offSpring = Variables.offSpring - 1;
-					Variables.foodAmount = Variables.foodAmount + 5;
-				}
-			}
-			if(Variables.totalDays == 4){
-				Variables.deerPopulation = Variables.deerPopulation + Variables.offSpring/2; 
-			}
-			if(Variables.waterAmount <= 0){
-				if(Variables.deerPopulation > 0){
-				Variables.deerPopulation = Variables.deerPopulation - 8;
-				Variables.waterAmount = Variables.waterAmount + 4;
-				}
-				else if(Variables.deerPopulation == 0){
-					Variables.waterAmount = Variables.waterAmount + 2;
-				}
-			}
-			if(Variables.waterAmount <= 0){
-				if(Variables.deerPopulation == 0){
-					Variables.waterAmount = Variables.waterAmount + 3;
-				}
-				else if(Variables.deerPopulation > 0){
-					Variables.deerPopulation = Variables.deerPopulation - 3;
-					Variables.waterAmount = Variables.waterAmount +3;
-				}
-			}
-			if(Variables.totalDays == Variables.deathDays){
-				if(Variables.deerPopulation >= 5){
-				Variables.deerPopulation = Variables.deerPopulation - 5; 
-				 Variables.deathDays =  Variables.deathDays*3;
-				}
-				else if(Variables.deerPopulation < 5){
-					Variables.deerPopulation = Variables.deerPopulation - Variables.deerPopulation;
-					 Variables.deathDays = Variables.deathDays*3;
-				}
-				else if(Variables.deerPopulation == 0){
-					 Variables.deathDays =  Variables.deathDays*3;
-				}
-			}
-			if(Variables.deerPopulation == 0 && Variables.offSpring == 0){
-				Variables.totalDays = Variables.days;
-				System.out.println("Deer Died");
-			}
-			if(Variables.deerPopulation == 0){
-				System.out.println("Adults Died on day " + Variables.totalDays);
-			}
-			if(Variables.deerPopulation > 0 || Variables.offSpring > 0){
-				Variables.totalDays = ++Variables.totalDays;
-			}
-			if(Variables.deerPopulation < 0){
-				Variables.deerPopulation = 0;
-			}
-			if(Variables.foodAmount < 0){
-				Variables.foodAmount = 0;
-			}
-			if(Variables.waterAmount < 0){
-				Variables.waterAmount = 0;
-			}
-			if(Variables.waterAmount < 0){
-				Variables.waterAmount = 0;
-			}
+	public static void doCalculations(){ //This does the Calculations
+		//This simply loads up what is needed to run the calculations
+		DeerPopulationCalculations deerPopulationCalc = new DeerPopulationCalculations(); 
+		EndingChecks checkEnd = new EndingChecks(); 
+		ResourceComsumption Consumption = new ResourceComsumption(); 
+		ResourceEffects Effects = new ResourceEffects();
+		NegativeNumberCheck Check = new NegativeNumberCheck();
+		ResourceRegrowth Regrowth = new ResourceRegrowth();
+		
+		while(Variables.totalDays != Variables.days){ //This is the Beggining of the Calculations
+			checkEnd.endSimulationCheck(); //checks to see if we should end the simulation
+			deerPopulationCalc.deerPopulationCalculations(); //Does the Calculations for Deer Population
+			checkEnd.endSimulationCheck(); //Checks to see if we should end
+			Check.checkForNegativeNumbers(); //corrects any possible negative numbers we have
+			Consumption.FoodConsumption(); //Changes the amount of Food
+			Consumption.WaterConsumption(); //Changes the amount of water
+			Regrowth.foodRegrowth();  //Regrows food 
+			Regrowth.waterRegen(); //Rainfall occurs
+			Check.checkForNegativeNumbers(); //Changes any negative numbers to 0
+			Effects.lackOfFood(); //if we have 0 food then this runs
+			Effects.lackOfWater(); //if we have 0 water then this runs
+			checkEnd.endSimulationCheck(); //checks to see if the simulation should end
+			Check.checkForNegativeNumbers(); //Fizes any negative numbers we have
+			System.out.println("a Day has passed");
 		}
 	}
 	public static void finalOutput(){ //This is the Final Output. 
-		System.out.println(" ");
-		System.out.println("The end of the " + Variables.days + " are up, these are the results");
-		Variables.printVariables();
-		System.out.println("Thank-you for Participating");
+		System.out.println(" "); //creates a blank line
+		System.out.println("The end of the " + Variables.days + " are up, these are the results"); //This is printed out
+		Variables.printVariables(); //prints the variables
+		System.out.println("Thank-you for Participating"); //Displays this
 	}
 	
 }

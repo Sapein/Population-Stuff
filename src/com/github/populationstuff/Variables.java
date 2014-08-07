@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class Variables {
 	//This class Mainly holds our variables I may remove this later and merge it with Formulas
 	public static int deerPopulation = 10;
-	public static int foodAmount = 100;
+	public static int foodAmount = 100; 
 	public static int shelterAmount = 20;
 	public static int waterAmount = 100;
 	public static int offSpring = 0;
-	public static int totalDays = 0;
-	public static int deathDays = 120;
+	public static int deathDays = 1825;
 	public static int days;
+	public static int totalDays = days;
 	
 	public static void printVariables(){ //Simply prints out the starting Variables
 		System.out.println("The amount of Deer in the Wild is " + deerPopulation);
@@ -28,5 +28,4 @@ public class Variables {
 	public static void printDays(){
 		System.out.println("The Amount of Days to simulate is " + days); // This simply displays the amount of days(I did this due to the fact I re-use printVariables in Forumals.java
 	}
-	
 }
