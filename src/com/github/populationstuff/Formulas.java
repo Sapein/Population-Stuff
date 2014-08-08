@@ -24,7 +24,7 @@ public class Formulas {
 			Effects.lackOfWater(); //if we have 0 water then this runs
 			checkEnd.endSimulationCheck(); //checks to see if the simulation should end
 			Check.checkForNegativeNumbers(); //Fizes any negative numbers we have
-			System.out.println("a Day has passed");
+			System.out.println(Variables.totalDays);
 		}
 	}
 	public static void finalOutput(){ //This is the Final Output. 

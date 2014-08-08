@@ -2,7 +2,6 @@ package com.github.populationstuff;
 
 public class NegativeNumberCheck {
 	public void checkForNegativeNumbers(){
-		
 		if(Variables.deerPopulation < 0){
 			Variables.deerPopulation = 0;
 		}

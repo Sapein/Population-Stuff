@@ -10,8 +10,8 @@ public class Variables {
 	public static int waterAmount = 100;
 	public static int offSpring = 0;
 	public static int deathDays = 1825;
+	public static int totalDays = 0;
 	public static int days;
-	public static int totalDays = days;
 	
 	public static void printVariables(){ //Simply prints out the starting Variables
 		System.out.println("The amount of Deer in the Wild is " + deerPopulation);

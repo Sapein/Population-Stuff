@@ -25,8 +25,8 @@ public class ResourceEffects {
 	public void lackOfWater(){
 		if(Variables.waterAmount <= 0){
 			if(Variables.deerPopulation > 0){
-			Variables.deerPopulation = Variables.deerPopulation - 8;
-			Variables.waterAmount = Variables.waterAmount + 4;
+				Variables.deerPopulation = Variables.deerPopulation - 8;
+				Variables.waterAmount = Variables.waterAmount + 4;
 			}
 			
 			else if(Variables.deerPopulation == 0){

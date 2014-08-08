@@ -1,7 +1,6 @@
 package com.github.populationstuff;
 
-public class ResourceComsumption {
-	Variables var = new Variables();
+public class ResourceComsumption { //This is the resource Consumption
 	public void FoodConsumption(){
 		Variables.foodAmount = Variables.foodAmount - Variables.deerPopulation + 2;
 		if(Variables.offSpring > 0){
