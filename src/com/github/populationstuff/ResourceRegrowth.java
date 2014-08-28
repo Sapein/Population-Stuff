@@ -1,5 +1,7 @@
 package com.github.populationstuff;
-
+/*
+ * This allows the resources to regrow.
+ */
 public class ResourceRegrowth {
 	public void foodRegrowth(){
 		Variables.foodAmount = Variables.foodAmount + 100;

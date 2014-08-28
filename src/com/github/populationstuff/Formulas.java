@@ -1,5 +1,7 @@
 package com.github.populationstuff;
-
+/*
+ *  This class is what does the Formulas and calcuations, I mainly put this here to make the Main class more compact.
+ */
 public class Formulas {
 	//This simply loads up what is needed to run the calculations
 	static DeerPopulationCalculations deerPopulationCalc = new DeerPopulationCalculations(); 

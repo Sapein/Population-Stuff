@@ -1,6 +1,8 @@
 //This project was created By Sapein sometime in July.
 package com.github.populationstuff; //This is the package
-
+/*
+ * This is the main class, it's simply to load up the program
+ */
 public class PopulationStuffMain { //This is the main class 
 	public static void main(String[] args){
 		System.out.println("Deer Population Simulator V1.1 Alpha      By: Sapein"); //Simply Displays my name and what the program is

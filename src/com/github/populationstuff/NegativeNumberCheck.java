@@ -1,5 +1,5 @@
 package com.github.populationstuff;
-
+//This is just here to prevent negative numbers
 public class NegativeNumberCheck {
 	public void checkForNegativeNumbers(){
 		if(Variables.deerPopulation < 0){

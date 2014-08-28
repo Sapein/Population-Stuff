@@ -1,5 +1,8 @@
 package com.github.populationstuff;
-
+/*
+ * This contains the population calculations for the Program. Also the 'growth days' is the day in which they become sexually mature
+ * for the amount of days, I am using a white tailed deer(That is if i remember correctly)
+ */
 public class DeerPopulationCalculations {
 	public void deerPopulationCalculations(){
 		int growthDays = 365;

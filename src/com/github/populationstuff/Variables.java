@@ -1,7 +1,9 @@
 package com.github.populationstuff;
 
 import java.util.Scanner;
-
+/*
+ * This contains most of the variables for the program, I may move this later, but for now it's staying here.
+ */
 public class Variables {
 	//This class Mainly holds our variables I may remove this later and merge it with Formulas
 	public static int deerPopulation = 10;
