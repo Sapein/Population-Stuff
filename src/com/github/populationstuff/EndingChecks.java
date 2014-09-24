@@ -4,11 +4,13 @@ package com.github.populationstuff;
  * continuing. This also used to check if the maximum anout of days had passed, but it was bugged so I removed it.  
  */
 public class EndingChecks {
-
-	public static void endSimulationCheck(){
+	/*
+	 * This is simply for ending checks.
+	 */
+	public void endSimulationCheck(){
 		if(Variables.deerPopulation == 0 && Variables.offSpring == 0){
 			System.out.println("Deer Died");
-			Variables.totalDays = Variables.days;
+			Variables.totalDays = Variables. days;
 		}
 	}
 }

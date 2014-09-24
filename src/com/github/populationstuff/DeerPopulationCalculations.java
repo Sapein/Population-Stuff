@@ -4,6 +4,9 @@ package com.github.populationstuff;
  * for the amount of days, I am using a white tailed deer(That is if i remember correctly)
  */
 public class DeerPopulationCalculations {
+	/*
+	 * This makes sure that repopulation works.
+	 */
 	public void deerPopulationCalculations(){
 		int growthDays = 365;
 		if(Variables.deerPopulation >= 2){ //checks to see the amount of deer is greater than or equal to 2

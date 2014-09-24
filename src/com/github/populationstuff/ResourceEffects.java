@@ -1,6 +1,10 @@
 package com.github.populationstuff;
 //Right now this class only manages when the resources drop below a certain point(mainly with food and water at this time).
 public class ResourceEffects {
+	
+	/*
+	 * This causes the deer population to be affected by the lack of food that is in the environment
+	 */
 	public void lackOfFood(){
 		if(Variables.foodAmount <= 0){
 			if(Variables.deerPopulation >= 10){
@@ -21,7 +25,9 @@ public class ResourceEffects {
 			}
 		}
 	}
-	
+	/*
+	 * This causes the deer population to be affected by the lack of water in the environment. 
+	 */
 	public void lackOfWater(){
 		if(Variables.waterAmount <= 0){
 			if(Variables.deerPopulation > 0){

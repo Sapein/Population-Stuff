@@ -1,16 +1,19 @@
 //This project was created By Sapein sometime in July.
-package com.github.populationstuff; //This is the package
+
+package com.github.populationstuff; 
+
 /*
- * This is the main class, it's simply to load up the program
+ * This loads the program up, this also calls the other classes, to set the variables correctly in the case of User Input, to printing the 
+ * variables, to make the calculations occur and to output the final line, along with a short top menu thing. 
  */
-public class PopulationStuffMain { //This is the main class 
+public class PopulationStuffMain {
 	public static void main(String[] args){
-		System.out.println("Deer Population Simulator V1.1 Alpha      By: Sapein"); //Simply Displays my name and what the program is
-		Variables.getUserDays(); //This is for getting the amount of days the user wants to use
-		Variables.printDays(); //This is for prnting the amount of days
-		Variables.printVariables(); //This is for printing the variables
-		Formulas.doCalculations(); //this does the calculations
-		Formulas.finalOutput(); //this displays the final output
+		System.out.println("Deer Population Simulator V1.1 Alpha      By: Sapein"); 
+		Variables.getUserDays();
+		Variables.printDays(); 
+		Variables.printVariables(); 
+		Formulas.doCalculations(); 
+		Formulas.finalOutput(); 
 	}
 	
 
